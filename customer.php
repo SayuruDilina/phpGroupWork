@@ -15,7 +15,102 @@ $result=mysqli_query($conn,$query);
     <title>The Gallery Café</title>
     <link rel="stylesheet" href="customer.css">
     <link rel="stylesheet" href="style.css">
+<style>
+    .current-order {
+    width: 50%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-items {
+    
+    overflow-y: auto;
+    margin-bottom: 20px;
+
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-item-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.order-item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.price {
+    font-weight: bold;
+    color: #333;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.order-summary {
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 0px;
+    width: 50%;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.payment-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: medium;
+    margin-top: 10px;
+}
+
+.payment-button:hover {
+    background-color: #e65c00;
+}
+</style>
 </head>
 
 <body>
@@ -89,7 +184,7 @@ $result=mysqli_query($conn,$query);
                     <img src="img/img19.jpg" alt="">
                     <img src="img/img20.jpg" alt="">
                     <img src="img/img22.jpg" alt="">
-                    <img src="img/img21.jpg" a+lt="">
+                    <img src="img/img21.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -162,93 +257,43 @@ $result=mysqli_query($conn,$query);
                     <?php
                     while($row=mysqli_fetch_assoc($result)){
                       ?>
-                        <h3><?php echo $row['itemName'] ?> </h3>
-                        <p>Price: Rs.<?php echo $row['price'] ?></p>
-                                                           
+                       <div class="special-item">
+                      <h3><?php echo $row['itemName']; ?></h3>
+                       <p>Price: Rs.<?php echo $row['price']; ?></p>
+                       <button class="order-button" 
+                        data-item-name="<?php echo $row['itemName']; ?>" 
+                        data-price="<?php echo $row['price']; ?>">Order</button>                                  
+                      </div>              
                       <?php
                     }
                     ?>
                                       
-                        <button class="order-button">Order</button>
+                        
                     </div>
-                    <div class="special-item">
-                        <h3>Iced Caramel Latte </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button" data-item-name="Iced Caramel Latte">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Passion Fruit Mojito </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button" data-item-name="Passion Fruit Mojito">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Fresh Lime Soda </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button" data-item-name="Fresh Lime Soda">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Strawberry Lemonade</h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button" data-item-name="Strawberry Lemonade">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Espresso Martini </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button" data-item-name="Espresso Martini">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Chilled Green Tea </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button" data-item-name="Chilled Green Tea">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Hot Chocolate </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Pineapple Mint Cooler </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Sparkling Water </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Vanilla Bean Frappuccino </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Raspberry Iced Tea </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Chocolate Mint Shake</h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Blueberry Lemon Fizz </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button">Order</button>
-                    </div>
-                    <div class="special-item">
-                        <h3>Cold Brew Coffee </h3>
-                        <p>Price: Rs. 500</p>
-                        <button class="order-button">Order</button>
-                    </div>
-
-
+                  
                 </div>
 
-                <div id="spesialImages">
-                    <img src="img/img31.jpg" alt="">
-                    <img src="img/img32.jpg" alt="">
-                    <img src="img/img33.jpg" alt="">
+               
+    <section class="current-order" id="currentOrder">
+        <div class="order-header">
+            <h2>Current Order</h2>
+            <button class="order-settings">⚙</button>
+        </div>
+
+        <div class="order-items" id="orderItems">
+            <!-- Order items will be dynamically added here -->
+        </div>
+      
+    
+                <div class="order-summary">
+                         <div class="summary-total">
+                        <p>Total</p>
+                        <p id="total">$34.86</p>
+                    </div>
+                   <button class="payment-button" id="confirmPayment">Confirm Payment</button>
+                </div>
+            </section>
+        
 
                 </div>
             </div>
@@ -548,7 +593,92 @@ $result=mysqli_query($conn,$query);
 
 
 
-    <script src="customer.js"></script>
+   <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const orderButtons = document.querySelectorAll('.order-button');
+    const orderItemsContainer = document.getElementById('orderItems');
+    let total = 0;
+    let orders = []; 
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const itemName = this.getAttribute('data-item-name');
+            const itemPrice = parseFloat(this.getAttribute('data-price'));
+
+            const orderItem = document.createElement('div');
+            orderItem.classList.add('order-item');
+
+            orderItem.innerHTML = `
+                <div class="order-item-info">
+                    <h3>${itemName}</h3>
+                    <p class="price">Rs.${itemPrice.toFixed(2)}</p>
+                    <div class="quantity-control">
+                        <button class="quantity-btn decrease">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn increase">+</button>
+                    </div>
+                </div>
+            `;
+
+            orderItemsContainer.appendChild(orderItem);
+
+            const increaseBtn = orderItem.querySelector('.increase');
+            const decreaseBtn = orderItem.querySelector('.decrease');
+            const quantityDisplay = orderItem.querySelector('.quantity');
+            let quantity = 1; 
+
+            total += itemPrice; 
+            document.getElementById('total').textContent = `Rs.${total.toFixed(2)}`;
+
+            orders.push({ itemName, itemPrice, quantity }); 
+            increaseBtn.addEventListener('click', function() {
+                quantity += 1;
+                quantityDisplay.textContent = quantity;
+                total += itemPrice;
+                document.getElementById('total').textContent = `Rs.${total.toFixed(2)}`;
+
+                orders = orders.map(order => 
+                    order.itemName === itemName ? { ...order, quantity } : order
+                );
+            });
+
+            decreaseBtn.addEventListener('click', function() {
+                if (quantity > 1) {
+                    quantity -= 1;
+                    quantityDisplay.textContent = quantity;
+                    total -= itemPrice; 
+                    document.getElementById('total').textContent = `Rs.${total.toFixed(2)}`;
+
+                    orders = orders.map(order => 
+                        order.itemName === itemName ? { ...order, quantity } : order
+                    );
+                }
+            });
+        });
+    });
+
+   
+    document.getElementById('confirmPayment').addEventListener('click', function() {
+       
+        fetch('processOrder.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ orders, total })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            
+        });
+    });
+});
+
+
+   </script>
 </body>
 
 </html>
