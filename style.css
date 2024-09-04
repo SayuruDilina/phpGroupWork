@@ -1,0 +1,887 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Protest+Riot&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&family=Protest+Riot&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lilita+One&family=Pacifico&family=Protest+Riot&family=Rubik+Moonrocks&display=swap');
+
+
+
+
+
+
+
+
+
+
+
+body {
+    background-image: url(img/img8.jpg);
+    background-size: cover; /* Ensure the image covers the entire screen */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Keep the image fixed during scroll */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-color: #aaa3a3; /* Fallback color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #b0b0b0;
+    
+}
+
+header {
+    background-color: #353535;
+    color: white;
+    text-align: center;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-top: -46px;
+    margin-right: -8px;
+    margin-left: -8px;
+    
+}
+
+.functions{
+    padding: 0.1cm;
+    position: sticky;
+    top: 1%;
+    left: 10%;
+    z-index: 1;
+    margin-top: -65px;
+  
+}
+
+header h1{
+    font-family: "Pacifico", sans-serif;
+    font-size: 6cap;
+    padding-top: 0%;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.home{
+    display: flex;
+    /* align-items: center; */
+    min-height: 100vh;
+    background: url(img/img8.jpg) no-repeat;
+    background-size:cover;
+    background-position: center;
+    margin-top: 0px;
+}
+
+
+.home .content{
+    max-width: 100%;
+}
+
+.home .content h3{
+    font-size: 3rem;
+    color: #dbdbdb;
+    font-style: italic;
+    font-family: "Lilita One", sans-serif;
+
+}
+
+
+
+.home .content p{
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 1rem 0;
+    line-height: 1.5;
+    max-width: 50rem;
+    font-family: "Lilita One", sans-serif;
+    font-style: oblique;
+
+    
+}
+
+
+
+
+
+.home {
+    position: relative;
+    padding: 50px;
+    text-align: left;
+    color: white;
+}
+
+.home .content {
+    background-color: rgba(6, 6, 6, 0.7); /* Black with 70% opacity */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 650px; /* Limit the width of the content */
+    height: fit-content;
+     /* Center the content */
+    text-align: left;
+}
+
+.home h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.home p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+.menu {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+}
+
+.menu h2{
+    color: rgb(224, 223, 223);
+    font-family: "Lilita One", sans-serif;
+    font-size: 2cap;
+}
+
+.search{
+    size: 100cap;
+    width: 46.5%;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+
+}
+
+#menuItems {
+    width: 45%; 
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#menuItems .menu-item {
+    margin-bottom: 20px;
+    position: relative;
+    background-color: white; /* Set background to white */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#menuItems .menu-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #333; /* Darker text color for better contrast */
+}
+
+#menuItems .menu-item p {
+    margin: 15px 0;
+    color: #666; /* Gray color for the details */
+}
+
+#menuItems .menu-item button {
+    padding: 10px;
+    background-color: #444; /* Darker button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: medium;
+}
+
+#menuItems .menu-item button:hover {
+    background-color: #757474;
+}
+
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label, form input, form button {
+    margin: 10px 0;
+    width: 3cap;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+#orderMessage {
+    text-align: center;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.order-form {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    display: none;
+    z-index: 100;
+}
+
+
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#menuItems {
+    width: 45%; 
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+
+#menuImages {
+    width: 50%; 
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3px;
+
+}
+
+#menuImages img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
+
+/* special items */
+
+
+
+.specials {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+}
+
+.specials h2{
+    color: rgb(224, 223, 223);
+    font-family: "Lilita One", sans-serif;
+    font-size: 2cap;
+}
+
+
+#specialItems {
+    width: 45%; 
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#specialItems .special-item {
+    margin-bottom: 20px;
+    position: relative;
+    background-color: white; /* Set background to white */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#specialItems .special-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #333; /* Darker text color for better contrast */
+}
+
+#specialItems .special-item p {
+    margin: 15px 0;
+    color: #666; /* Gray color for the details */
+}
+
+#specialItems .special-item button {
+    padding: 10px;
+    background-color: #444; /* Darker button color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: medium;
+}
+
+#specialItems .special-item button:hover {
+    background-color: #757474;
+}
+
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label, form input, form button {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+#orderMessage {
+    text-align: center;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.order-form {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    display: none;
+    z-index: 100;
+}
+
+
+
+.specials-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#specialItems {
+    width: 45%; 
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+
+#spesialImages {
+    width: 50%; 
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3px;
+
+}
+
+#spesialImages img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* table reservation */
+
+
+#reservationForm {
+
+    background-color: rgba(6, 6, 6, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 650px; 
+    height: fit-content;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservations{
+    background-image: url(/img/img16.jpg);
+    
+}
+
+
+
+
+form label, form input, form button {
+    margin: 10px 0;
+}
+
+form input {
+    width: 40%; 
+    height: 40px; 
+    font-size: 2cap;
+}
+
+
+form button {
+    width: 150px;
+    height: 50px; 
+    font-size: 16px; 
+    padding: 10px; 
+    background-color: #919090;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+button:hover {
+    background-color: #5a5a5a;
+}
+
+
+
+
+.reservations h2{
+    font-size: 4cap;
+    color: #f9f9f9;
+    font-family: "Lilita One", sans-serif;
+    text-align: left;
+}
+
+
+.name{
+    color: #f9f9f9;
+    font-family: "Lilita One", sans-serif;
+    font-size: 2cap;
+}
+
+.email{
+    color: #f9f9f9;
+    font-family: "Lilita One", sans-serif;
+    font-size: 2cap;
+}
+
+.date{
+    color: #f9f9f9;
+    font-family: "Lilita One", sans-serif;
+    font-size: 2cap;
+}
+
+.time{
+    color: #f9f9f9;
+    font-family: "Lilita One", sans-serif;
+    font-size: 2cap;
+}
+
+.guests{
+    color: #f9f9f9;
+    font-family: "Lilita One", sans-serif;
+    font-size: 2cap;
+}
+
+
+
+
+/* reviews */
+h2{
+    color: white;
+    font-family: "Lilita One", sans-serif;
+    font-size: 3cap;
+    text-align: center;
+}
+.reviews-section {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #626262;
+}
+
+.reviews-section h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.review-summary {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.review-summary h2 {
+    font-size: 2rem;
+}
+
+.review-summary p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.review-summary p span {
+    font-weight: bold;
+    color: #ff6a00;
+}
+
+.review-summary button {
+    padding: 10px 20px;
+    background-color: #ff6a00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.review-card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.review-header p {
+    margin: 0;
+    color: #888;
+}
+
+.review-rating span {
+    color: #ff6a00;
+    font-size: 1.5rem;
+}
+
+.review-card p {
+    color: #555;
+}
+
+
+
+/* About Us */
+
+
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #555;
+    padding: 50px 0;
+}
+
+.AboutOurRestaurant{
+    color: #b0b0b0;
+    font-size: 4cap;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+    color: #f8f8f8;
+    font-size: 2cap;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.services {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.services h2 {
+    margin-bottom: 30px;
+}
+
+.service-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.service-item i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.our-team {
+    padding: 50px 0;
+    text-align: center;
+    background-color: rgba(6, 6, 6, 0.7); /* Black with 70% opacity */
+   
+    /* padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 650px;
+    padding-bottom: 150px; */
+    border-radius: 10px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.our-team h2 {
+    margin-bottom: 30px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #dbdbdb;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.team-member {
+    flex: 1;
+    min-width: 200px;
+    max-width: 1000px;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.team-member img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #555;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.newsletter {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.newsletter h2 {
+    margin-bottom: 10px;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.newsletter form input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.newsletter form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff9900;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
