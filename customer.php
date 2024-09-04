@@ -89,7 +89,7 @@ $result=mysqli_query($conn,$query);
                     <img src="img/img19.jpg" alt="">
                     <img src="img/img20.jpg" alt="">
                     <img src="img/img22.jpg" alt="">
-                    <img src="img/img21.jpg" alt="">
+                    <img src="img/img21.jpg" a+lt="">
                 </div>
             </div>
         </div>
