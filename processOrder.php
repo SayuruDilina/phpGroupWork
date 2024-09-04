@@ -29,7 +29,7 @@ if (!empty($data['orders'])) {
         $quantity = $conn->real_escape_string($order['quantity']);
         $tot=$itemPrice*$quantity;
 
-        $sql = "INSERT INTO orders (oid, itemName, quantity, price) VALUES ('3', '$itemName', '$quantity', '$tot')";
+        $sql = "INSERT INTO orders (oid, itemName, quantity, price) VALUES ('4', '$itemName', '$quantity', '$tot')";
         if ($conn->query($sql) !== TRUE) {
             echo json_encode(['success' => false, 'message' => 'Error: ' . $conn->error]);
             exit;

@@ -3,6 +3,28 @@ require_once 'includes/dbh.inc.php';
 
 $query="SELECT * FROM menu";
 $result=mysqli_query($conn,$query);
+
+if(isset($_POST["reserve"])){
+    $custName=$_POST["name"];
+       $email=$_POST["email"];
+      
+       $date=$_POST["date"];
+       $time=$_POST["time"];
+       $guestsNo = $_POST["guests"];
+   
+       $query = "INSERT INTO reservations (custName, email, date, time, guestsNo) VALUES ('$custName', '$email', '$date', '$time', '$guestsNo')";
+       
+       if (mysqli_query($conn, $query)) {
+        // Redirect before outputting the alert
+        echo "<script>
+                alert('Your Reservation Successfully');
+                window.location.href = '" . $_SERVER['PHP_SELF'] . "';
+              </script>";
+        exit;
+    } else {
+        echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";
+    }
+    }
 ?>
 
 
@@ -208,24 +230,24 @@ $result=mysqli_query($conn,$query);
     <section id="reservations" class="reservations">
         <h2>---------------</h2>
         <h2>Reserve a Table</h2>
-        <form id="reservationForm">
+        <form id="reservationForm" class="" action="" method="post" autocomplete="off">
 
             <label class="name" for="name">Name:</label>
-            <input type="text" id="name" size="" required>
+            <input type="text" id="name" name="name"  required value="">
 
             <label class="email" for="email">Email:</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" name="email" required value="">
 
             <label class="date" for="date">Date:</label>
-            <input type="date" id="date" required>
+            <input type="date" id="date" name="date"  required value="">
 
             <label class="time" for="time">Time:</label>
-            <input type="time" id="time" required>
+            <input type="time" id="time" name="time" required value="">
 
             <label class="guests" for="guests">Number of Guests:</label>
-            <input type="number" id="guests" required>
+            <input type="number" id="guests" name="guests" required value="">
 
-            <button type="submit">Reserve</button>
+            <button type="submit" name="reserve" >Reserve</button>
 
         </form>
     </section>
@@ -668,7 +690,11 @@ $result=mysqli_query($conn,$query);
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Success:', data);
+            if (data.success) {
+                alert(data.message); // Display the alert with the message from PHP
+            } else {
+                alert('Order processing failed: ' + data.message); // Handle errors
+            }
         })
         .catch((error) => {
             console.error('Error:', error);

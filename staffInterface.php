@@ -4,6 +4,12 @@ require_once 'includes/dbh.inc.php';
 $query="SELECT * FROM menu";
 $result=mysqli_query($conn,$query);
 
+$queryReserve="SELECT * FROM reservations";
+$resultreserve=mysqli_query($conn,$queryReserve);
+
+$queryOrder="SELECT * FROM orders";
+$resultOrders=mysqli_query($conn,$queryOrder);
+
 
 if(isset($_POST["submit"])){
     $itemcode=$_POST["itemcode"];
@@ -49,6 +55,38 @@ if(isset($_POST["submit"])){
             border-radius: 4px;
             border: 1px solid #ccc;
         }
+        tbody tr {
+    transition: background-color 0.3s ease;
+    /* Smooth background color change */
+}
+
+tbody tr:hover {
+    background-color: #f2f2f2;
+    /* Highlight on hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
     </style>
 </head>
 <body>
@@ -85,6 +123,59 @@ if(isset($_POST["submit"])){
                
         
     </table>
+    <table class="Table" id="TableOrder">
+    <h1 class="mb-4"> Order Details</h1>
+        <thead>
+            <tr>
+                <th>Order Id</th>
+                <th>Item Name</th>
+                <th>Price (LKR)</th>
+                <th>Qty</th>
+                <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                    <?php
+                    while($row=mysqli_fetch_assoc($resultOrders)){
+                      ?>
+                      <td><?php echo $row['oid'] ?></td>
+                      <td><?php echo $row['itemName'] ?></td>
+                      <td><?php echo $row['quantity'] ?></td>
+                      <td><?php echo $row['price'] ?></td>
+                       </tr>
+                      <?php
+                    }
+                    ?>
+                    </tr>
+        </thead>
+           </table>
+
+           <table class="Table" id="TableOrder">
+        <thead>
+            <tr>
+                <th>Reservation Id</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Number of Guests</th>
+                                    </tr>
+                                    <tr>
+                                    <?php
+                    while($row=mysqli_fetch_assoc($resultreserve)){
+                      ?>
+                      <td><?php echo $row['reservationId'] ?></td>
+                      <td><?php echo $row['custName'] ?></td>
+                      <td><?php echo $row['email'] ?></td>
+                      <td><?php echo $row['date'] ?></td>
+                      <td><?php echo $row['time'] ?></td>
+                      <td><?php echo $row['guestsNo'] ?></td>
+                       </tr>
+                      <?php
+                    }
+                    ?>
+                    </tr>
+        </thead>
+            </table>
 
 <form class="" action="" method="post" autocomplete="off">
     <label for=""> Item Code</label>
